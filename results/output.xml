@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.3 on win32)" generated="2026-02-26T23:55:51.832242" rpa="false" schemaversion="5">
+<suite id="s1" name="PlaywrightTypescript" source="C:\Users\fulma\Playwright\PlaywrightTypescript">
+<suite id="s1-s1" name="E2Eamazon" source="C:\Users\fulma\Playwright\PlaywrightTypescript\E2Eamazon.robot">
+<test id="s1-s1-t1" name="End to End Amazon Purchase Flow" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-26T23:55:52.462862" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-26T23:55:52.462272" elapsed="2.949767"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-26T23:55:55.413507" elapsed="0.031444"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-02-26T23:55:55.448546" elapsed="0.006264"/>
+</kw>
+<kw name="Input Text Dynamically" owner="common_utils">
+<kw name="Replace String" owner="String">
+<msg time="2026-02-26T23:55:55.465343" level="INFO">${dynamic_xpath} = //input[@placeholder='Search Amazon' and @role='searchbox']</msg>
+<var>${dynamic_xpath}</var>
+<arg>${xpath}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-26T23:55:55.458602" elapsed="0.011785"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T23:55:55.474879" level="INFO">Typing text 'GymBag' into text field '//input[@placeholder='Search Amazon' and @role='searchbox']'.</msg>
+<arg>${dynamic_xpath}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T23:55:55.473251" elapsed="6.943735"/>
+</kw>
+<arg>${search_box_xpath}</arg>
+<arg>searchbox</arg>
+<arg>GymBag</arg>
+<status status="PASS" start="2026-02-26T23:55:55.455679" elapsed="6.962174"/>
+</kw>
+<kw name="Click Element Dynamically" owner="common_utils">
+<kw name="Replace String" owner="String">
+<msg time="2026-02-26T23:56:02.422427" level="INFO">${dynamic_xpath} = //input[@type='submit' and @value='Go']</msg>
+<var>${dynamic_xpath}</var>
+<arg>${xpath}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-26T23:56:02.421791" elapsed="0.003850"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-26T23:56:02.427036" level="INFO">Clicking element '//input[@type='submit' and @value='Go']'.</msg>
+<arg>${dynamic_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T23:56:02.426048" elapsed="2.681773"/>
+</kw>
+<arg>${search_button_xpath}</arg>
+<arg>Go</arg>
+<status status="PASS" start="2026-02-26T23:56:02.420805" elapsed="2.687343"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-02-26T23:56:05.337585" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="search_results.png"&gt;&lt;img src="search_results.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>search_results.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-02-26T23:56:05.108605" elapsed="0.230088"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-26T23:56:25.342030" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-26T23:56:05.339973" elapsed="20.003378"/>
+</kw>
+<status status="PASS" start="2026-02-26T23:55:52.453479" elapsed="32.890973"/>
+</test>
+<status status="PASS" start="2026-02-26T23:55:51.931720" elapsed="33.429553"/>
+</suite>
+<status status="PASS" start="2026-02-26T23:55:51.844521" elapsed="33.529392"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="PlaywrightTypescript" id="s1" pass="1" fail="0" skip="0">PlaywrightTypescript</stat>
+<stat name="E2Eamazon" id="s1-s1" pass="1" fail="0" skip="0">PlaywrightTypescript.E2Eamazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
