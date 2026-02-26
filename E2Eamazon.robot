@@ -6,7 +6,6 @@ Resource          variables.robot
 *** Test Cases ***
 
 End to End Amazon Purchase Flow
-    # Open the Amazon website
     Open Browser    ${URL}    chrome
     Maximize Browser Window
     Set Selenium Implicit Wait    10s
@@ -14,6 +13,7 @@ End to End Amazon Purchase Flow
     # Search for a product
    
     Click Element Dynamically    ${search_button_xpath}    Go
-    capture Page Screenshot    search_results.png
-
-    sleep    20s
+    Capture Page Screenshot With Time
+    sleep    2s
+    close browser
+    

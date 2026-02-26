@@ -1,6 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String              # <– needed for Replace String
+Library    DateTime            # <– needed for timestamps
+Library    Collections         # <– needed for dictionary operations
+Library    OperatingSystem     # <– needed for file operations
+Library    BuiltIn
 
 *** Keywords ***
 
@@ -17,3 +21,11 @@ Input Text Dynamically
 Highlight Element
     [Arguments]    ${xpath}
     Execute JavaScript    document.evaluate(${xpath}, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border='2px solid yellow'
+
+Capture Page Screenshot With Time
+    [Arguments]    ${screenshot_name}=screenshot
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    ${filename}=    Get Current Date    result_format=${screenshot_name}_%Y%m%d_%H%M%S.png
+    Capture Page Screenshot    ${filename}
+
+
