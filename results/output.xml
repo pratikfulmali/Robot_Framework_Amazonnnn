@@ -1,83 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.3 on win32)" generated="2026-02-26T23:55:51.832242" rpa="false" schemaversion="5">
-<suite id="s1" name="PlaywrightTypescript" source="C:\Users\fulma\Playwright\PlaywrightTypescript">
-<suite id="s1-s1" name="E2Eamazon" source="C:\Users\fulma\Playwright\PlaywrightTypescript\E2Eamazon.robot">
-<test id="s1-s1-t1" name="End to End Amazon Purchase Flow" line="8">
+<robot generator="Robot 7.3.2 (Python 3.14.3 on win32)" generated="2026-02-27T20:19:10.795690" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework Amazon" source="C:\Users\fulma\Playwright\Robot_Framework_Amazon">
+<suite id="s1-s1" name="E2Eamazon" source="C:\Users\fulma\Playwright\Robot_Framework_Amazon\E2Eamazon.robot">
+<test id="s1-s1-t1" name="Amazon Search Product validation" line="9">
+<kw name="Open Browser To Login Page" owner="common_keyward">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-26T23:55:52.462862" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
+<msg time="2026-02-27T20:19:11.124375" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-26T23:55:52.462272" elapsed="2.949767"/>
+<status status="PASS" start="2026-02-27T20:19:11.123498" elapsed="3.533729"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-26T23:55:55.413507" elapsed="0.031444"/>
+<status status="PASS" start="2026-02-27T20:19:14.657843" elapsed="0.031616"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2026-02-26T23:55:55.448546" elapsed="0.006264"/>
+<status status="PASS" start="2026-02-27T20:19:14.690193" elapsed="0.003594"/>
+</kw>
+<status status="PASS" start="2026-02-27T20:19:11.121789" elapsed="3.572437"/>
 </kw>
 <kw name="Input Text Dynamically" owner="common_utils">
 <kw name="Replace String" owner="String">
-<msg time="2026-02-26T23:55:55.465343" level="INFO">${dynamic_xpath} = //input[@placeholder='Search Amazon' and @role='searchbox']</msg>
+<msg time="2026-02-27T20:19:14.698115" level="INFO">${dynamic_xpath} = //input[@placeholder='Search Amazon' and @role='searchbox']</msg>
 <var>${dynamic_xpath}</var>
 <arg>${xpath}</arg>
 <arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
 <arg>${value}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2026-02-26T23:55:55.458602" elapsed="0.011785"/>
+<status status="PASS" start="2026-02-27T20:19:14.696971" elapsed="0.002000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-26T23:55:55.474879" level="INFO">Typing text 'GymBag' into text field '//input[@placeholder='Search Amazon' and @role='searchbox']'.</msg>
+<msg time="2026-02-27T20:19:14.701518" level="INFO">Typing text 'GymBag' into text field '//input[@placeholder='Search Amazon' and @role='searchbox']'.</msg>
 <arg>${dynamic_xpath}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-26T23:55:55.473251" elapsed="6.943735"/>
+<status status="PASS" start="2026-02-27T20:19:14.699579" elapsed="4.729207"/>
 </kw>
 <arg>${search_box_xpath}</arg>
 <arg>searchbox</arg>
 <arg>GymBag</arg>
-<status status="PASS" start="2026-02-26T23:55:55.455679" elapsed="6.962174"/>
+<status status="PASS" start="2026-02-27T20:19:14.695172" elapsed="4.734021"/>
 </kw>
 <kw name="Click Element Dynamically" owner="common_utils">
 <kw name="Replace String" owner="String">
-<msg time="2026-02-26T23:56:02.422427" level="INFO">${dynamic_xpath} = //input[@type='submit' and @value='Go']</msg>
+<msg time="2026-02-27T20:19:19.431739" level="INFO">${dynamic_xpath} = //input[@type='submit' and @value='Go']</msg>
 <var>${dynamic_xpath}</var>
 <arg>${xpath}</arg>
 <arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
 <arg>${value}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2026-02-26T23:56:02.421791" elapsed="0.003850"/>
+<status status="PASS" start="2026-02-27T20:19:19.430984" elapsed="0.001146"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-26T23:56:02.427036" level="INFO">Clicking element '//input[@type='submit' and @value='Go']'.</msg>
+<msg time="2026-02-27T20:19:19.433325" level="INFO">Clicking element '//input[@type='submit' and @value='Go']'.</msg>
 <arg>${dynamic_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-26T23:56:02.426048" elapsed="2.681773"/>
+<status status="PASS" start="2026-02-27T20:19:19.432550" elapsed="2.583930"/>
 </kw>
 <arg>${search_button_xpath}</arg>
 <arg>Go</arg>
-<status status="PASS" start="2026-02-26T23:56:02.420805" elapsed="2.687343"/>
+<status status="PASS" start="2026-02-27T20:19:19.429910" elapsed="2.587051"/>
+</kw>
+<kw name="Capture Page Screenshot With Time" owner="common_utils">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2026-02-27T20:19:22.020221" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\fulma\Playwright\Robot_Framework_Amazon"&gt;C:\Users\fulma\Playwright\Robot_Framework_Amazon&lt;/a&gt;'.</msg>
+<msg time="2026-02-27T20:19:22.023647" level="INFO">5 files:
+.gitignore
+E2Eamazon.robot
+common_keyward.robot
+common_utils.robot
+variables.robot</msg>
+<msg time="2026-02-27T20:19:22.024975" level="INFO">${files} = ['.gitignore', 'E2Eamazon.robot', 'common_keyward.robot', 'common_utils.robot', 'variables.robot']</msg>
+<var>${files}</var>
+<arg>.</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.019418" elapsed="0.007708"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-27T20:19:22.035909" level="INFO">${is_png} = False</msg>
+<var>${is_png}</var>
+<arg>'${file}'.endswith('.png')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.034257" elapsed="0.002231"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_png}</arg>
+<arg>Remove File</arg>
+<arg>${file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.037231" elapsed="0.001424"/>
+</kw>
+<var name="${file}">.gitignore</var>
+<status status="PASS" start="2026-02-27T20:19:22.030057" elapsed="0.009048"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-27T20:19:22.042275" level="INFO">${is_png} = False</msg>
+<var>${is_png}</var>
+<arg>'${file}'.endswith('.png')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.041186" elapsed="0.001367"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_png}</arg>
+<arg>Remove File</arg>
+<arg>${file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.043028" elapsed="0.001333"/>
+</kw>
+<var name="${file}">E2Eamazon.robot</var>
+<status status="PASS" start="2026-02-27T20:19:22.039739" elapsed="0.005127"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-27T20:19:22.052148" level="INFO">${is_png} = False</msg>
+<var>${is_png}</var>
+<arg>'${file}'.endswith('.png')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.048875" elapsed="0.008108"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_png}</arg>
+<arg>Remove File</arg>
+<arg>${file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.057657" elapsed="0.000619"/>
+</kw>
+<var name="${file}">common_keyward.robot</var>
+<status status="PASS" start="2026-02-27T20:19:22.045808" elapsed="0.012656"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-27T20:19:22.059510" level="INFO">${is_png} = False</msg>
+<var>${is_png}</var>
+<arg>'${file}'.endswith('.png')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.059013" elapsed="0.000704"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_png}</arg>
+<arg>Remove File</arg>
+<arg>${file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.059939" elapsed="0.000434"/>
+</kw>
+<var name="${file}">common_utils.robot</var>
+<status status="PASS" start="2026-02-27T20:19:22.058709" elapsed="0.001792"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-27T20:19:22.062376" level="INFO">${is_png} = False</msg>
+<var>${is_png}</var>
+<arg>'${file}'.endswith('.png')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.061189" elapsed="0.001417"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_png}</arg>
+<arg>Remove File</arg>
+<arg>${file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.062847" elapsed="0.000500"/>
+</kw>
+<var name="${file}">variables.robot</var>
+<status status="PASS" start="2026-02-27T20:19:22.060674" elapsed="0.002822"/>
+</iter>
+<var>${file}</var>
+<value>@{files}</value>
+<status status="PASS" start="2026-02-27T20:19:22.027829" elapsed="0.035777"/>
+</for>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-02-27T20:19:22.064713" level="INFO">${timestamp} = 2026-02-27 20:19:22</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.064005" elapsed="0.001171"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-02-27T20:19:22.066460" level="INFO">${filename} = screenshot_20260227_201922.png</msg>
+<var>${filename}</var>
+<arg>result_format=${screenshot_name}_%Y%m%d_%H%M%S.png</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.065493" elapsed="0.001571"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-02-26T23:56:05.337585" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="search_results.png"&gt;&lt;img src="search_results.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>search_results.png</arg>
+<msg time="2026-02-27T20:19:22.307757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot_20260227_201922.png"&gt;&lt;img src="screenshot_20260227_201922.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-02-26T23:56:05.108605" elapsed="0.230088"/>
+<status status="PASS" start="2026-02-27T20:19:22.068059" elapsed="0.240850"/>
+</kw>
+<status status="PASS" start="2026-02-27T20:19:22.018071" elapsed="0.291466"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-02-27T20:19:22.603810" level="INFO">Element '//span[contains(text(),'Gym Bag')]' is displayed.</msg>
+<arg>//span[contains(text(),'Gym Bag')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.313515" elapsed="0.290579"/>
+</kw>
+<arg>${True}</arg>
+<arg>element should be visible</arg>
+<arg>//span[contains(text(),'Gym Bag')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-27T20:19:22.312021" elapsed="0.292261"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-26T23:56:25.342030" level="INFO">Slept 20 seconds.</msg>
-<arg>20s</arg>
+<msg time="2026-02-27T20:19:24.607031" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-26T23:56:05.339973" elapsed="20.003378"/>
+<status status="PASS" start="2026-02-27T20:19:22.604813" elapsed="2.002889"/>
 </kw>
-<status status="PASS" start="2026-02-26T23:55:52.453479" elapsed="32.890973"/>
+<status status="PASS" start="2026-02-27T20:19:11.116205" elapsed="13.492411"/>
 </test>
-<status status="PASS" start="2026-02-26T23:55:51.931720" elapsed="33.429553"/>
+<status status="PASS" start="2026-02-27T20:19:10.866046" elapsed="13.747979"/>
 </suite>
-<status status="PASS" start="2026-02-26T23:55:51.844521" elapsed="33.529392"/>
+<status status="PASS" start="2026-02-27T20:19:10.800222" elapsed="13.834686"/>
 </suite>
 <statistics>
 <total>
@@ -86,8 +228,8 @@
 <tag>
 </tag>
 <suite>
-<stat name="PlaywrightTypescript" id="s1" pass="1" fail="0" skip="0">PlaywrightTypescript</stat>
-<stat name="E2Eamazon" id="s1-s1" pass="1" fail="0" skip="0">PlaywrightTypescript.E2Eamazon</stat>
+<stat name="Robot Framework Amazon" id="s1" pass="1" fail="0" skip="0">Robot Framework Amazon</stat>
+<stat name="E2Eamazon" id="s1-s1" pass="1" fail="0" skip="0">Robot Framework Amazon.E2Eamazon</stat>
 </suite>
 </statistics>
 <errors>

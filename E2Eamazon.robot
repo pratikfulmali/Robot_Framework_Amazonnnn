@@ -2,18 +2,19 @@
 Library           SeleniumLibrary
 Resource          common_utils.robot
 Resource          variables.robot
+resource          common_keyward.robot
 
 *** Test Cases ***
 
-End to End Amazon Purchase Flow
-    Open Browser    ${URL}    chrome
-    Maximize Browser Window
-    Set Selenium Implicit Wait    10s
+Amazon Search Product validation
+    Open Browser To Login Page
     Input Text Dynamically    ${search_box_xpath}    searchbox      GymBag
     # Search for a product
    
     Click Element Dynamically    ${search_button_xpath}    Go
+
     Capture Page Screenshot With Time
+    run keyword if    ${True}    element should be visible    //span[contains(text(),'Gym Bag')]
     sleep    2s
-    close browser
+    # close browser
     
