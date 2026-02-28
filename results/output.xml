@@ -1,225 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.3 on win32)" generated="2026-02-27T20:19:10.795690" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.3 on win32)" generated="2026-02-28T23:01:35.850329" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Framework Amazon" source="C:\Users\fulma\Playwright\Robot_Framework_Amazon">
 <suite id="s1-s1" name="E2Eamazon" source="C:\Users\fulma\Playwright\Robot_Framework_Amazon\E2Eamazon.robot">
-<test id="s1-s1-t1" name="Amazon Search Product validation" line="9">
+<test id="s1-s1-t1" name="TC02_Amazon Search Product Add to cart validation" line="18">
 <kw name="Open Browser To Login Page" owner="common_keyward">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-27T20:19:11.124375" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
+<msg time="2026-02-28T23:01:36.173236" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-27T20:19:11.123498" elapsed="3.533729"/>
+<status status="PASS" start="2026-02-28T23:01:36.172542" elapsed="3.009193"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-27T20:19:14.657843" elapsed="0.031616"/>
+<status status="PASS" start="2026-02-28T23:01:39.182242" elapsed="0.037015"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2026-02-27T20:19:14.690193" elapsed="0.003594"/>
+<status status="PASS" start="2026-02-28T23:01:39.220764" elapsed="0.003005"/>
 </kw>
-<status status="PASS" start="2026-02-27T20:19:11.121789" elapsed="3.572437"/>
+<status status="PASS" start="2026-02-28T23:01:36.171017" elapsed="3.053401"/>
 </kw>
+<kw name="Search For Product" owner="common_keyward">
 <kw name="Input Text Dynamically" owner="common_utils">
 <kw name="Replace String" owner="String">
-<msg time="2026-02-27T20:19:14.698115" level="INFO">${dynamic_xpath} = //input[@placeholder='Search Amazon' and @role='searchbox']</msg>
+<msg time="2026-02-28T23:01:39.231465" level="INFO">${dynamic_xpath} = //input[@placeholder='Search Amazon' and @role='searchbox']</msg>
 <var>${dynamic_xpath}</var>
 <arg>${xpath}</arg>
 <arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
 <arg>${value}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2026-02-27T20:19:14.696971" elapsed="0.002000"/>
+<status status="PASS" start="2026-02-28T23:01:39.229890" elapsed="0.002204"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-27T20:19:14.701518" level="INFO">Typing text 'GymBag' into text field '//input[@placeholder='Search Amazon' and @role='searchbox']'.</msg>
+<msg time="2026-02-28T23:01:39.233609" level="INFO">Typing text 'PlayStation 5' into text field '//input[@placeholder='Search Amazon' and @role='searchbox']'.</msg>
 <arg>${dynamic_xpath}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-27T20:19:14.699579" elapsed="4.729207"/>
+<status status="PASS" start="2026-02-28T23:01:39.232506" elapsed="4.864989"/>
 </kw>
 <arg>${search_box_xpath}</arg>
 <arg>searchbox</arg>
-<arg>GymBag</arg>
-<status status="PASS" start="2026-02-27T20:19:14.695172" elapsed="4.734021"/>
+<arg>${product_name}</arg>
+<status status="PASS" start="2026-02-28T23:01:39.228811" elapsed="4.868979"/>
 </kw>
 <kw name="Click Element Dynamically" owner="common_utils">
 <kw name="Replace String" owner="String">
-<msg time="2026-02-27T20:19:19.431739" level="INFO">${dynamic_xpath} = //input[@type='submit' and @value='Go']</msg>
+<msg time="2026-02-28T23:01:44.099227" level="INFO">${dynamic_xpath} = //input[@type='submit' and @value='Go']</msg>
 <var>${dynamic_xpath}</var>
 <arg>${xpath}</arg>
 <arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
 <arg>${value}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2026-02-27T20:19:19.430984" elapsed="0.001146"/>
+<status status="PASS" start="2026-02-28T23:01:44.098784" elapsed="0.000852"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-27T20:19:19.433325" level="INFO">Clicking element '//input[@type='submit' and @value='Go']'.</msg>
+<msg time="2026-02-28T23:01:44.100643" level="INFO">Clicking element '//input[@type='submit' and @value='Go']'.</msg>
 <arg>${dynamic_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-27T20:19:19.432550" elapsed="2.583930"/>
+<status status="PASS" start="2026-02-28T23:01:44.099945" elapsed="3.913875"/>
 </kw>
 <arg>${search_button_xpath}</arg>
 <arg>Go</arg>
-<status status="PASS" start="2026-02-27T20:19:19.429910" elapsed="2.587051"/>
+<status status="PASS" start="2026-02-28T23:01:44.098067" elapsed="3.915939"/>
+</kw>
+<arg>PlayStation 5</arg>
+<status status="PASS" start="2026-02-28T23:01:39.226533" elapsed="8.787550"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[contains(text(),'PlayStation 5')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-28T23:01:48.014669" elapsed="0.070633"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-02-28T23:01:48.150736" level="INFO">${count} = 13</msg>
+<var>${count}</var>
+<arg>//a[contains(text(),'PlayStation 5')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-02-28T23:01:48.085964" elapsed="0.065750"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-28T23:01:48.155473" level="INFO">Total search results for PlayStation 5: 13</msg>
+<arg>Total search results for PlayStation 5: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-28T23:01:48.153764" elapsed="0.002279"/>
 </kw>
 <kw name="Capture Page Screenshot With Time" owner="common_utils">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-28T23:01:48.160130" level="INFO">${screenshot_dir} = screennsshot</msg>
+<var>${screenshot_dir}</var>
+<arg>screennsshot</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-28T23:01:48.159117" elapsed="0.001390"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2026-02-28T23:01:48.162830" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\fulma\Playwright\Robot_Framework_Amazon\screennsshot"&gt;C:\Users\fulma\Playwright\Robot_Framework_Amazon\screennsshot&lt;/a&gt;' already exists.</msg>
+<arg>${screenshot_dir}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2026-02-28T23:01:48.160999" elapsed="0.002203"/>
+</kw>
 <kw name="List Files In Directory" owner="OperatingSystem">
-<msg time="2026-02-27T20:19:22.020221" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\fulma\Playwright\Robot_Framework_Amazon"&gt;C:\Users\fulma\Playwright\Robot_Framework_Amazon&lt;/a&gt;'.</msg>
-<msg time="2026-02-27T20:19:22.023647" level="INFO">5 files:
-.gitignore
-E2Eamazon.robot
-common_keyward.robot
-common_utils.robot
-variables.robot</msg>
-<msg time="2026-02-27T20:19:22.024975" level="INFO">${files} = ['.gitignore', 'E2Eamazon.robot', 'common_keyward.robot', 'common_utils.robot', 'variables.robot']</msg>
+<msg time="2026-02-28T23:01:48.164812" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\fulma\Playwright\Robot_Framework_Amazon\screennsshot"&gt;C:\Users\fulma\Playwright\Robot_Framework_Amazon\screennsshot&lt;/a&gt;'.</msg>
+<msg time="2026-02-28T23:01:48.168323" level="INFO">0 files:
+</msg>
+<msg time="2026-02-28T23:01:48.169528" level="INFO">${files} = []</msg>
 <var>${files}</var>
-<arg>.</arg>
+<arg>${screenshot_dir}</arg>
 <doc>Wrapper for `List Directory` that returns only files.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.019418" elapsed="0.007708"/>
+<status status="PASS" start="2026-02-28T23:01:48.163464" elapsed="0.006915"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-02-27T20:19:22.035909" level="INFO">${is_png} = False</msg>
 <var>${is_png}</var>
 <arg>'${file}'.endswith('.png')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.034257" elapsed="0.002231"/>
+<status status="NOT RUN" start="2026-02-28T23:01:48.174999" elapsed="0.001573"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_png}</arg>
 <arg>Remove File</arg>
-<arg>${file}</arg>
+<arg>${screenshot_dir}/${file}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.037231" elapsed="0.001424"/>
+<status status="NOT RUN" start="2026-02-28T23:01:48.177723" elapsed="0.000634"/>
 </kw>
-<var name="${file}">.gitignore</var>
-<status status="PASS" start="2026-02-27T20:19:22.030057" elapsed="0.009048"/>
-</iter>
-<iter>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-02-27T20:19:22.042275" level="INFO">${is_png} = False</msg>
-<var>${is_png}</var>
-<arg>'${file}'.endswith('.png')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.041186" elapsed="0.001367"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_png}</arg>
-<arg>Remove File</arg>
-<arg>${file}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.043028" elapsed="0.001333"/>
-</kw>
-<var name="${file}">E2Eamazon.robot</var>
-<status status="PASS" start="2026-02-27T20:19:22.039739" elapsed="0.005127"/>
-</iter>
-<iter>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-02-27T20:19:22.052148" level="INFO">${is_png} = False</msg>
-<var>${is_png}</var>
-<arg>'${file}'.endswith('.png')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.048875" elapsed="0.008108"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_png}</arg>
-<arg>Remove File</arg>
-<arg>${file}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.057657" elapsed="0.000619"/>
-</kw>
-<var name="${file}">common_keyward.robot</var>
-<status status="PASS" start="2026-02-27T20:19:22.045808" elapsed="0.012656"/>
-</iter>
-<iter>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-02-27T20:19:22.059510" level="INFO">${is_png} = False</msg>
-<var>${is_png}</var>
-<arg>'${file}'.endswith('.png')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.059013" elapsed="0.000704"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_png}</arg>
-<arg>Remove File</arg>
-<arg>${file}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.059939" elapsed="0.000434"/>
-</kw>
-<var name="${file}">common_utils.robot</var>
-<status status="PASS" start="2026-02-27T20:19:22.058709" elapsed="0.001792"/>
-</iter>
-<iter>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-02-27T20:19:22.062376" level="INFO">${is_png} = False</msg>
-<var>${is_png}</var>
-<arg>'${file}'.endswith('.png')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.061189" elapsed="0.001417"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_png}</arg>
-<arg>Remove File</arg>
-<arg>${file}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.062847" elapsed="0.000500"/>
-</kw>
-<var name="${file}">variables.robot</var>
-<status status="PASS" start="2026-02-27T20:19:22.060674" elapsed="0.002822"/>
+<var name="${file}"/>
+<status status="NOT RUN" start="2026-02-28T23:01:48.173030" elapsed="0.005634"/>
 </iter>
 <var>${file}</var>
 <value>@{files}</value>
-<status status="PASS" start="2026-02-27T20:19:22.027829" elapsed="0.035777"/>
+<status status="NOT RUN" start="2026-02-28T23:01:48.171068" elapsed="0.007831"/>
 </for>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2026-02-27T20:19:22.064713" level="INFO">${timestamp} = 2026-02-27 20:19:22</msg>
+<msg time="2026-02-28T23:01:48.179837" level="INFO">${timestamp} = 2026-02-28 23:01:48</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.064005" elapsed="0.001171"/>
+<status status="PASS" start="2026-02-28T23:01:48.179370" elapsed="0.000648"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2026-02-27T20:19:22.066460" level="INFO">${filename} = screenshot_20260227_201922.png</msg>
+<msg time="2026-02-28T23:01:48.180676" level="INFO">${filename} = PlayStation5_search_results_20260228_230148.png</msg>
 <var>${filename}</var>
 <arg>result_format=${screenshot_name}_%Y%m%d_%H%M%S.png</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.065493" elapsed="0.001571"/>
+<status status="PASS" start="2026-02-28T23:01:48.180204" elapsed="0.000643"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-02-27T20:19:22.307757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot_20260227_201922.png"&gt;&lt;img src="screenshot_20260227_201922.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${filename}</arg>
+<msg time="2026-02-28T23:01:48.373944" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screennsshot/PlayStation5_search_results_20260228_230148.png"&gt;&lt;img src="screennsshot/PlayStation5_search_results_20260228_230148.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${screenshot_dir}/${filename}</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.068059" elapsed="0.240850"/>
+<status status="PASS" start="2026-02-28T23:01:48.181077" elapsed="0.193600"/>
 </kw>
-<status status="PASS" start="2026-02-27T20:19:22.018071" elapsed="0.291466"/>
+<arg>PlayStation5_search_results</arg>
+<status status="PASS" start="2026-02-28T23:01:48.157120" elapsed="0.217990"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-27T20:19:22.603810" level="INFO">Element '//span[contains(text(),'Gym Bag')]' is displayed.</msg>
-<arg>//span[contains(text(),'Gym Bag')]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.313515" elapsed="0.290579"/>
-</kw>
-<arg>${True}</arg>
-<arg>element should be visible</arg>
-<arg>//span[contains(text(),'Gym Bag')]</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.312021" elapsed="0.292261"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-27T20:19:24.607031" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-27T20:19:22.604813" elapsed="2.002889"/>
-</kw>
-<status status="PASS" start="2026-02-27T20:19:11.116205" elapsed="13.492411"/>
+<status status="PASS" start="2026-02-28T23:01:36.166634" elapsed="12.209250"/>
 </test>
-<status status="PASS" start="2026-02-27T20:19:10.866046" elapsed="13.747979"/>
+<status status="PASS" start="2026-02-28T23:01:35.900945" elapsed="12.485811"/>
 </suite>
-<status status="PASS" start="2026-02-27T20:19:10.800222" elapsed="13.834686"/>
+<status status="PASS" start="2026-02-28T23:01:35.858183" elapsed="12.535315"/>
 </suite>
 <statistics>
 <total>

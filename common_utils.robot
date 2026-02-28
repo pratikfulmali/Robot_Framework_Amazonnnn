@@ -24,15 +24,17 @@ Highlight Element
 
 Capture Page Screenshot With Time
     [Arguments]    ${screenshot_name}=screenshot
-    # Delete all previous screenshots
-    ${files}=    List Files In Directory    .
+    ${screenshot_dir}=    Set Variable    screennsshot
+    Create Directory    ${screenshot_dir}
+    # Delete all previous screenshots in the screenshots directory
+    ${files}=    List Files In Directory    ${screenshot_dir}
     FOR    ${file}    IN    @{files}
         ${is_png}=    Evaluate    '${file}'.endswith('.png')
-        Run Keyword If    ${is_png}    Remove File    ${file}
+        Run Keyword If    ${is_png}    Remove File    ${screenshot_dir}/${file}
     END
-    # Capture new screenshot with timestamp
+    # Capture new screenshot with timestamp into the screenshots directory
     ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
     ${filename}=    Get Current Date    result_format=${screenshot_name}_%Y%m%d_%H%M%S.png
-    Capture Page Screenshot    ${filename}
+    Capture Page Screenshot    ${screenshot_dir}/${filename}
 
 

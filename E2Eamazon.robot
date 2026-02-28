@@ -6,15 +6,22 @@ resource          common_keyward.robot
 
 *** Test Cases ***
 
-Amazon Search Product validation
+TC01_Amazon Search Product validation
     Open Browser To Login Page
-    Input Text Dynamically    ${search_box_xpath}    searchbox      GymBag
-    # Search for a product
-   
-    Click Element Dynamically    ${search_button_xpath}    Go
+    search For Product    Gym Bag
 
     Capture Page Screenshot With Time
     run keyword if    ${True}    element should be visible    //span[contains(text(),'Gym Bag')]
     sleep    2s
     # close browser
+    
+TC02_Amazon Search Product Add to cart validation
+    Open Browser To Login Page
+    search For Product    PlayStation 5
+    wait until element is visible    //a[contains(text(),'PlayStation 5')]
+    ${count}=    Get Element Count    //a[contains(text(),'PlayStation 5')]
+    log to console    Total search results for PlayStation 5: ${count}
+    capture page screenshot with time    PlayStation5_search_results
+
+
     

@@ -10,3 +10,8 @@ Open Browser To Login Page
     Open Browser    ${URL}    chrome
     Maximize Browser Window
     Set Selenium Implicit Wait    10s
+
+Search For Product
+    [Arguments]    ${product_name}
+    Input Text Dynamically    ${search_box_xpath}    searchbox      ${product_name}
+    Click Element Dynamically    ${search_button_xpath}    Go    
