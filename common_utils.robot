@@ -7,7 +7,11 @@ Library    OperatingSystem     # <– needed for file operations
 Library    BuiltIn
 
 *** Keywords ***
-
+wait until element is visible dynamically
+    [Arguments]    ${xpath}    ${value}
+    ${dynamic_xpath}=    Replace String    ${xpath}    <<<>>>    ${value}
+    Wait Until Element Is Visible    ${dynamic_xpath}
+    
 Click Element Dynamically
     [Arguments]    ${xpath}    ${value}
     ${dynamic_xpath}=    Replace String    ${xpath}    <<<>>>    ${value}
@@ -17,10 +21,6 @@ Input Text Dynamically
     [Arguments]    ${xpath}    ${value}    ${text}
     ${dynamic_xpath}=    Replace String    ${xpath}    <<<>>>    ${value}
     Input Text    ${dynamic_xpath}    ${text}
-
-Highlight Element
-    [Arguments]    ${xpath}
-    Execute JavaScript    document.evaluate(${xpath}, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.border='2px solid yellow'
 
 Capture Page Screenshot With Time
     [Arguments]    ${screenshot_name}=screenshot
