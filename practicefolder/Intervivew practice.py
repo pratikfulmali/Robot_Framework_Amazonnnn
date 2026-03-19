@@ -11,7 +11,7 @@ for phone,price in Device.items():
     if price>low:
         low=price
         expDevice=phone
-print(expDevice)
+print("This is the most expencive Device:-",expDevice ," Its price is :",low)
 
 
  #Find the second highest from below list
