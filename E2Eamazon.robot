@@ -23,5 +23,16 @@ TC02_Amazon Search Product Add to cart validation
     log to console    Total search results for PlayStation 5: ${count}
     capture page screenshot with time    PlayStation5_search_results
 
+TC03_Amazon Search Product Add to cart validation
+    Open Browser To Login Page
+    Search For Product    Honeywell Turboforce Fan, Ht-900, 11 inch
+    capture page screenshot with time    HoneyWell_search_results
+    Scroll To Element Dynamically    ${span_text_following_button}    Ht-900
+    Click Element Dynamically    ${span_text_following_button}    Ht-900
+    Add Product To Cart
+    wait until element is visible dynamically    ${input_name}    proceedToRetailCheckout
+    Capture Page Screenshot With Time    TableFanAdded
 
-    
+
+
+      
