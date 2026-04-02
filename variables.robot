@@ -17,11 +17,15 @@ ${span_text_following_button}    //span[contains(text(),'<<<>>>')]/following::bu
 ${a_contains_text}    //a[contains(text(),'<<<>>>')]
 ${input_name}    //input[@name='<<<>>>']
 ${button_type}    //button[@type='<<<>>>']
+${span_contains_text}    //span[contains(text(),'<<<>>>')]
+${span_text}    //span[text()='<<<>>>']
+
 
 
 
 #headers
 ${h6_text}    //h6[text()='<<<>>>']
+${h5_text}    //h5[text()='<<<>>>']
 
 
 
