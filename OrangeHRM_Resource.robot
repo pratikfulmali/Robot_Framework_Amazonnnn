@@ -32,4 +32,8 @@ Admin Search Record
     ${RecordCount}    Get Text    //div[@class='orangehrm-container']/parent::div/div/div/span
     Log To Console    Total Records Found: ${RecordCount}
     Should Not Be Equal As Strings    No Records Found    ${RecordCount}
+    Sleep    2s
+    Capture Page Screenshot
+    Close Browser
+
 
