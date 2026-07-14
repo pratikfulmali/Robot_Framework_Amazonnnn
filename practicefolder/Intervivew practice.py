@@ -50,3 +50,19 @@ for i in dublicatelst :
             count_dub[i] =1    
 for key, value in count_dub.items():
         print(f"{key} occurs {value} times")         
+
+
+
+strlist = ["Amit","Dada","Rocky","Gajju","Esha","ishika","Omkar","Pratik"]
+strlist = sorted(strlist)
+
+vowels = ["a","e","i","o","u"]
+countVowels = {}
+
+for name in strlist:
+    first_char = name[0].lower()   # check first letter in lowercase
+    if first_char in vowels:
+        if first_char in countVowels:
+            countVowels[first_char] += 1
+        else:
+            countVowels[first_char] = 1        
